@@ -1,3 +1,65 @@
-.container {
+.logViewerContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
   text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.tableRow {
+  transition: background-color 0.3s;
+}
+
+.tableRow:hover {
+  background-color: #f9f9f9;
+}
+
+.expandIndicatorCell {
+  width: 30px;
+  text-align: center;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.timestampCell {
+  font-family: monospace;
+  width: 250px;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eventCell {
+  font-family: monospace;
+  width: auto;
+  overflow: hidden;
+  vertical-align: top;
+  position: relative;
+}
+
+.eventContent {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
 }
