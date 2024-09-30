@@ -69,7 +69,9 @@ const LogViewer = () => {
             {new Date(entry._time).toISOString()}
           </div>
           <div
-            className={isExpanded ? styles.expandedEventCell : styles.collapsedEventCell}
+            className={
+              isExpanded ? styles.expandedEventCell : styles.collapsedEventCell
+            }
             role="cell"
           >
             {isExpanded ? (
