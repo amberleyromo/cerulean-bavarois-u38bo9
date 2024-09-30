@@ -1,65 +1,98 @@
+/* Container for the log viewer */
 .logViewerContainer {
+  height: 100%;
   width: 100%;
-  overflow-x: auto;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.table {
+/* Table styles */
+.logTable {
   width: 100%;
+  display: block;
   border-collapse: collapse;
-  table-layout: fixed;
+  font-family: monospace;
 }
 
-.table th,
-.table td {
-  border: 1px solid #ddd;
+/* Table header styles */
+.tableHeader {
+  display: flex;
+  background-color: #e0e0e0;
+  font-weight: bold;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tableHeader > div {
   padding: 8px;
+  border-right: 1px solid #ddd;
   text-align: left;
-  vertical-align: top;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.table th {
-  background-color: #f4f4f4;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+/* Row styles */
+.logRow {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
 }
 
-.tableRow {
-  transition: background-color 0.3s;
+.logRow:hover {
+  background-color: #f0f0f0;
 }
 
-.tableRow:hover {
-  background-color: #f9f9f9;
+.logRowContent {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
 }
 
 .expandIndicatorCell {
+  padding: 8px;
   width: 30px;
   text-align: center;
-  vertical-align: top;
-  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.expandIndicatorContent {
+  font-size: 14px;
+  color: #555;
 }
 
 .timestampCell {
-  font-family: monospace;
-  width: 250px;
-  vertical-align: top;
-  white-space: nowrap;
+  width: 200px;
+  padding: 8px;
+  border-right: 1px solid #ddd;
+  flex-shrink: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.eventCell {
-  font-family: monospace;
-  width: auto;
-  overflow: hidden;
-  vertical-align: top;
-  position: relative;
-}
-
-.eventContent {
-  display: block;
-  max-width: 100%;
-  overflow-x: auto;
+.collapsedEventCell {
+  width: 400px;
+  padding: 8px;
+  flex-grow: 1;
+  overflow-x: scroll;
   scrollbar-width: none;
   white-space: nowrap;
+}
+
+/* Expanded row content */
+.expandedEventCell {
+  width: 100%;
+  max-height: 200px; /* This needs to match the size calculated in getItemSize in component */
+  overflow: auto;
+  padding: 8px;
+  display: flex;
+}
+
+.expandedEventCellContent {
+  padding: 4px;
+  white-space: pre-wrap;
 }
