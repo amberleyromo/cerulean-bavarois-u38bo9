@@ -93,41 +93,35 @@ const LogViewer = () => {
   };
 
   return (
-    <div>
-      <h1>Log Viewer</h1>
-      <p>Number of logs entries fetched: {logEntries.length}</p>
-      <p>Number of entries shown: {logEntries.length}</p>
-      <p>Currently loading data? {loading ? "yes" : "no"}</p>
-      <div
-        className={styles.logViewerContainer}
-        role="table"
-        aria-label="Log Entries Table"
-      >
-        <div className={styles.logTable}>
-          <div className={styles.tableHeader} role="row">
-            <div
-              style={{ width: "30px" }}
-              role="columnheader"
-              aria-hidden="true"
-            ></div>
-            <div style={{ width: "200px" }} role="columnheader">
-              Time
-            </div>
-            <div style={{ width: "400px" }} role="columnheader">
-              Event
-            </div>
+    <div
+      className={styles.logViewerContainer}
+      role="table"
+      aria-label="Log Entries Table"
+    >
+      <div className={styles.logTable}>
+        <div className={styles.tableHeader} role="row">
+          <div
+            style={{ width: "30px" }}
+            role="columnheader"
+            aria-hidden="true"
+          ></div>
+          <div style={{ width: "200px" }} role="columnheader">
+            Time
           </div>
-          <List
-            ref={listRef}
-            height={600} // Set the height of the viewport (adjustable)
-            itemCount={logEntries.length}
-            itemSize={getItemSize}
-            width="100%"
-            overscanCount={5} // Optional: renders 5 additional rows before/after the visible area for smoother scrolling
-          >
-            {Row}
-          </List>
+          <div style={{ width: "400px" }} role="columnheader">
+            Event
+          </div>
         </div>
+        <List
+          ref={listRef}
+          height={600} // Set the height of the viewport (adjustable)
+          itemCount={logEntries.length}
+          itemSize={getItemSize}
+          width="100%"
+          overscanCount={5} // Optional: renders 5 additional rows before/after the visible area for smoother scrolling
+        >
+          {Row}
+        </List>
       </div>
     </div>
   );
