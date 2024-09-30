@@ -1,8 +1,12 @@
+import LogViewer from "./components/LogViewer/LogViewer";
+
 import "./App.css";
 
 function App() {
   return (
-    <div>Hello world</div>
+    <div>
+      <LogViewer />
+    </div>
   );
 }
 
