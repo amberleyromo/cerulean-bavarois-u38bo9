@@ -1,6 +1,6 @@
 # Log Viewer
 
-This project provides an example UI for displaying the contents of a large log file downloaded from a URL. It uses the most minimal possible production dependencies, primarily `react-window` for virtualization.
+This project provides an example UI for displaying the contents of a large log file downloaded from a URL. It reads log data from an ndjson stream, and renders it in a table with expandable/collapsable rows that leverages virtualization for performance, rendering only visible elements. It uses the most minimal possible production dependencies, primarily `react-window` for virtualization.
 
 ## Setup and Installation
 
@@ -55,12 +55,16 @@ yarn test
 ## Future Improvements and Considerations
 
 ### Possible improvements
+
+- Refactor `LogViewer` component to break it up into smaller, reusable, more maintainable pieces.
+- Consider fetching in response to user input instead / extend for user to fetch from any log URL.
+- Consider different caching strategies to improve load performance.
 - More robust error handling and retry logic.
 - Real-time data updates.
-- Consider different caching strategies.
-- Consider fetching in response to user input instead / extend for user to fetch from any log URL.
 
 ### Further testing
+
 - Expanded testing of the `LogViewer` component.
 - Testing of utilities like `ndjsonParser`.
 - Testing of hooks like `useLogDataHook`.
+- Test and validate that reintroduced semantics for table roles is correct, given the need to transition away from it due to usage of `react-window`.
