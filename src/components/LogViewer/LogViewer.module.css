@@ -3,7 +3,7 @@
   height: 100%;
   width: 100%;
   border: 1px solid #ccc;
-  background-color: #f7f7f7;
+  background-color: #1e1e1e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@
 /* Table header styles */
 .tableHeader {
   display: flex;
-  background-color: #e0e0e0;
+  background-color: #1a1a1a;
   font-weight: bold;
   padding: 8px 0;
   border-bottom: 1px solid #ddd;
@@ -29,7 +29,6 @@
 
 .tableHeader > div {
   padding: 8px;
-  border-right: 1px solid #ddd;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -44,7 +43,7 @@
 }
 
 .logRow:hover {
-  background-color: #f0f0f0;
+  background-color: #000;
 }
 
 .logRowContent {
@@ -96,4 +95,25 @@
 .expandedEventCellContent {
   padding: 4px;
   white-space: pre-wrap;
+}
+
+@media (prefers-color-scheme: light) {
+  .logViewerContainer {
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+  }
+
+  .tableHeader {
+    background-color: #e0e0e0;
+  }
+
+  .logRow {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease;
+  }
+
+  .logRow:hover {
+    background-color: #f0f0f0;
+  }
 }

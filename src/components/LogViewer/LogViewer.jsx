@@ -105,7 +105,7 @@ const LogViewer = () => {
             role="columnheader"
             aria-hidden="true"
           ></div>
-          <div style={{ width: "200px" }} role="columnheader">
+          <div style={{ width: "220px" }} role="columnheader">
             Time
           </div>
           <div style={{ width: "400px" }} role="columnheader">
